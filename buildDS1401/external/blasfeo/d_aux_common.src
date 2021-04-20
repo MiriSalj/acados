@@ -1,0 +1,241 @@
+#	 Microtec C/C++ PowerPC Compiler
+	#	"Mentor Graphics ANSI_C Front End 3.8.5   ; Back End 3.8.6   "
+	.file	"d_aux_common.c"
+#	Options: -x -xG -ze -f -p603e -DDS_PLATFORM_PPC -DWINDOWS_SKIP_PTR_ALIGNMENT_CHECK -D_DS1401 -D__DSPACE__ -JC:\acados_ds1401\acados\external\blasfeo\include -JC:\dSPACE RCPHIL 2017-B\DS1401\RTLib -DLA_HIGH_PERFORMANCE -DMF_PANELMAJ -DK_MAX_STACK=300 -DOS_WINDOWS -DEXTERNAL_BLAS_NONE -DTARGET_GENERIC -JC:\acados_ds1401\acados\external\blasfeo\include C:\acados_ds1401\acados\external\blasfeo\auxiliary\d_aux_common.c
+#	Source File: C:\acados_ds1401\acados\external\blasfeo\auxiliary\d_aux_common.c
+	.cputype	"603e/F"
+	.aloff
+	.endian	big
+	.lflags	nr
+	.equ	._PPC_EMB_initflag,1
+	.sect	.text
+	.align	4
+	.merge_start blasfeo_pm_memsize_dmat,N,N
+	.globl	blasfeo_pm_memsize_dmat
+blasfeo_pm_memsize_dmat:
+	slwi	8,3,2
+	addc	7,4,3
+	subic	7,7,1
+	divw	7,7,3
+	mullw	7,7,3
+	addic	6,5,4
+	subic	6,6,1
+	srawi	3,6,2
+	addze	6,3
+	slwi	6,6,2
+	cmp	0,0x0,4,5
+	bc	4,0,L..3
+	addc	3,8,4
+	b	CL.t.1
+L..3:
+	addc	3,8,5
+CL.t.1:
+	subic	3,3,1
+	divw	3,3,8
+	mullw	3,3,8
+L..4:
+	mullw	4,6,7
+	addc	3,4,3
+	slwi	3,3,3
+CLRET.blasfeo_pm_memsize_dmat:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start blasfeo_pm_create_dmat,N,N
+	.globl	blasfeo_pm_create_dmat
+blasfeo_pm_create_dmat:
+	stw	7,0(6)
+	stw	3,32(6)
+	slwi	10,3,2
+	stw	4,12(6)
+	stw	5,16(6)
+	addc	8,4,3
+	subic	8,8,1
+	divw	8,8,3
+	mullw	3,8,3
+	ori	12,3,0
+	addic	8,5,4
+	subic	8,8,1
+	srawi	9,8,2
+	addze	8,9
+	slwi	8,8,2
+	ori	11,8,0
+	stw	12,20(6)
+	stw	11,24(6)
+	ori	9,7,0
+	stw	9,4(6)
+	mullw	8,8,3
+	slwi	3,8,3
+	addc	9,9,3
+	cmp	0,0x0,4,5
+	bc	4,0,L..8
+	addc	3,10,4
+	b	CL.t.2
+L..8:
+	addc	3,10,5
+CL.t.2:
+	subic	3,3,1
+	divw	3,3,10
+	mullw	3,3,10
+L..9:
+	stw	9,8(6)
+	addc	3,8,3
+	slwi	3,3,3
+	stw	3,36(6)
+	addi	3,0,0
+	stw	3,28(6)
+CLRET.blasfeo_pm_create_dmat:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start blasfeo_pm_print_dmat,N,N
+	.globl	blasfeo_pm_print_dmat
+blasfeo_pm_print_dmat:
+	stwu	1,-56(1)
+	mflr	0
+	stw	21,12(1)
+	stw	22,16(1)
+	stw	23,20(1)
+	stw	24,24(1)
+	stw	25,28(1)
+	stw	26,32(1)
+	stw	27,36(1)
+	stw	28,40(1)
+	stw	29,44(1)
+	stw	30,48(1)
+	stw	31,52(1)
+	stw	0,60(1)
+	ori	31,7,0
+	ori	30,6,0
+	ori	29,5,0
+	ori	28,4,0
+	ori	27,3,0
+	addi	21,0,0
+	LD_ADDR	26,Nst.1
+	cmpi	0,0x0,27,0
+	bc	4,1,L..17
+	LD_ADDR	24,Nst.0
+L..13:
+	addi	22,0,0
+	ori	23,28,0
+	cmpi	0,0x0,23,0
+	bc	4,1,L..16
+	addc	25,30,21
+L..15:
+	lwz	3,4(29)
+	lwz	7,32(29)
+	subic	5,7,1
+	and	5,25,5
+	subfc	4,5,25
+	lwz	6,24(29)
+	mullw	4,4,6
+	addc	6,31,22
+	mullw	6,6,7
+	addc	4,4,6
+	addc	4,4,5
+	slwi	4,4,3
+	lfdx	1,3,4
+	ori	3,24,0
+	creqv	6,6,6
+	bl	printf
+	subic	23,23,1
+	addic	22,22,1
+	cmpi	0,0x0,23,0
+	bc	12,1,L..15
+L..16:
+	ori	3,26,0
+	crxor	6,6,6
+	bl	printf
+	addic	3,21,1
+	ori	21,3,0
+	cmp	0,0x0,3,27
+	bc	12,0,L..13
+L..17:
+	ori	3,26,0
+	crxor	6,6,6
+	bl	printf
+CLRET.blasfeo_pm_print_dmat:
+	lwz	0,60(1)
+	mtlr	0
+	lwz	21,12(1)
+	lwz	22,16(1)
+	lwz	23,20(1)
+	lwz	24,24(1)
+	lwz	25,28(1)
+	lwz	26,32(1)
+	lwz	27,36(1)
+	lwz	28,40(1)
+	lwz	29,44(1)
+	lwz	30,48(1)
+	lwz	31,52(1)
+	addi	1,1,56
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start blasfeo_cm_memsize_dmat,N,N
+	.globl	blasfeo_cm_memsize_dmat
+blasfeo_cm_memsize_dmat:
+	ori	5,4,0
+	cmp	0,0x0,3,4
+	bc	4,0,L..21
+	ori	5,3,0
+L..21:
+	mullw	3,3,4
+	addc	3,3,5
+	slwi	3,3,3
+CLRET.blasfeo_cm_memsize_dmat:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start blasfeo_cm_create_dmat,N,N
+	.globl	blasfeo_cm_create_dmat
+blasfeo_cm_create_dmat:
+	stw	6,0(5)
+	stw	3,12(5)
+	stw	4,16(5)
+	addi	10,0,0
+	stw	10,28(5)
+	ori	9,6,0
+	stw	9,4(5)
+	mullw	8,3,4
+	slwi	6,8,3
+	addc	9,9,6
+	ori	7,4,0
+	cmp	0,0x0,3,4
+	bc	4,0,L..25
+	ori	7,3,0
+L..25:
+	stw	9,8(5)
+	stw	10,28(5)
+	addc	3,8,7
+	slwi	3,3,3
+	stw	3,36(5)
+CLRET.blasfeo_cm_create_dmat:
+	bclr	20,0
+	.merge_end
+	.extern	printf,__fltused
+	.sect	.data
+	.align	8
+CLDATA.:
+	.sect	.data
+	.align	8
+CLRDATA.:
+	.sect	.rodata1
+	.align	8
+STRINGDATA.:
+	.sect	.rodata
+	.align	8
+CONSTDATA.:
+	.sect	.rodata1
+Nst.0:
+	.byte	"%9.5f \000"
+	.sect	.rodata1
+	.space	1
+Nst.1:
+	.byte	"\012\000"
+	.sect	.libinfo
+	.byte	"behp#603e#"

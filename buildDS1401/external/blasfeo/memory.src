@@ -1,0 +1,136 @@
+#	 Microtec C/C++ PowerPC Compiler
+	#	"Mentor Graphics ANSI_C Front End 3.8.5   ; Back End 3.8.6   "
+	.file	"memory.c"
+#	Options: -x -xG -ze -f -p603e -DDS_PLATFORM_PPC -DWINDOWS_SKIP_PTR_ALIGNMENT_CHECK -D_DS1401 -D__DSPACE__ -JC:\acados_ds1401\acados\external\blasfeo\include -JC:\dSPACE RCPHIL 2017-B\DS1401\RTLib -DLA_HIGH_PERFORMANCE -DMF_PANELMAJ -DK_MAX_STACK=300 -DOS_WINDOWS -DEXTERNAL_BLAS_NONE -DTARGET_GENERIC -JC:\acados_ds1401\acados\external\blasfeo\include C:\acados_ds1401\acados\external\blasfeo\auxiliary\memory.c
+#	Source File: C:\acados_ds1401\acados\external\blasfeo\auxiliary\memory.c
+	.cputype	"603e/F"
+	.aloff
+	.endian	big
+	.lflags	nr
+	.equ	._PPC_EMB_initflag,1
+	.sect	.text
+	.align	4
+	.merge_start blasfeo_is_init,N,N
+	.globl	blasfeo_is_init
+blasfeo_is_init:
+	LD_WORD	3,initialized
+CLRET.blasfeo_is_init:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start blasfeo_init,N,N
+	.globl	blasfeo_init
+blasfeo_init:
+	stwu	1,-24(1)
+	mflr	0
+	stw	29,12(1)
+	stw	30,16(1)
+	stw	31,20(1)
+	stw	0,28(1)
+	addi	3,0,4
+	addi	4,0,0xbb8
+	addi	5,0,256
+	bl	blasfeo_pm_memsize_dmat
+	ori	30,3,0
+	addi	3,0,4
+	addi	4,0,128
+	addi	5,0,256
+	bl	blasfeo_pm_memsize_dmat
+	ori	29,3,0
+	addi	3,0,4
+	addi	4,0,0xbb8
+	addi	5,0,256
+	bl	blasfeo_pm_memsize_smat
+	ori	31,3,0
+	addi	3,0,4
+	addi	4,0,128
+	addi	5,0,256
+	bl	blasfeo_pm_memsize_smat
+	ori	4,3,0
+	addic	30,30,0xfff
+	srawi	3,30,12
+	addze	30,3
+	mulli	30,30,0x1000
+	addic	5,29,0xfff
+	srawi	3,5,12
+	addze	5,3
+	mulli	5,5,0x1000
+	addic	3,31,0xfff
+	srawi	6,3,12
+	addze	3,6
+	mulli	3,3,0x1000
+	addic	4,4,0xfff
+	srawi	6,4,12
+	addze	4,6
+	mulli	4,4,0x1000
+	addc	30,30,5
+	addc	3,3,4
+	ori	31,3,0
+	cmp	0,0x0,30,3
+	bc	12,0,L..5
+	ori	31,30,0
+L..5:
+	addic	30,31,0x2000
+	ori	3,30,0
+	bl	malloc
+	ST_WORD	3,4,mem
+	addi	3,0,1
+	ST_WORD	3,4,initialized
+CLRET.blasfeo_init:
+	lwz	0,28(1)
+	mtlr	0
+	lwz	29,12(1)
+	lwz	30,16(1)
+	lwz	31,20(1)
+	addi	1,1,24
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start blasfeo_quit,N,N
+	.globl	blasfeo_quit
+blasfeo_quit:
+	stwu	1,-8(1)
+	mflr	0
+	stw	0,12(1)
+	LD_WORD	3,mem
+	bl	free
+	addi	3,0,0
+	ST_WORD	3,4,initialized
+CLRET.blasfeo_quit:
+	lwz	0,12(1)
+	mtlr	0
+	addi	1,1,8
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start blasfeo_get_buffer,N,N
+	.globl	blasfeo_get_buffer
+blasfeo_get_buffer:
+	LD_WORD	3,mem
+CLRET.blasfeo_get_buffer:
+	bclr	20,0
+	.merge_end
+	.extern	free,malloc,blasfeo_pm_memsize_dmat,blasfeo_pm_memsize_smat
+	.sect	.data
+	.align	8
+CLDATA.:
+	.sect	.data
+	.align	8
+CLRDATA.:
+	.sect	.rodata1
+	.align	8
+STRINGDATA.:
+	.sect	.rodata
+	.align	8
+CONSTDATA.:
+	.sect	.data
+initialized:
+	.long	0
+	.sect	.data
+mem:
+	.long	0
+	.sect	.libinfo
+	.byte	"behp#603e#"

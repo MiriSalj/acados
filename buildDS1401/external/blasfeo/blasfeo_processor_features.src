@@ -1,0 +1,191 @@
+#	 Microtec C/C++ PowerPC Compiler
+	#	"Mentor Graphics ANSI_C Front End 3.8.5   ; Back End 3.8.6   "
+	.file	"blasfeo_processor_features.c"
+#	Options: -x -xG -ze -f -p603e -DDS_PLATFORM_PPC -DWINDOWS_SKIP_PTR_ALIGNMENT_CHECK -D_DS1401 -D__DSPACE__ -JC:\acados_ds1401\acados\external\blasfeo\include -JC:\dSPACE RCPHIL 2017-B\DS1401\RTLib -DLA_HIGH_PERFORMANCE -DMF_PANELMAJ -DK_MAX_STACK=300 -DOS_WINDOWS -DEXTERNAL_BLAS_NONE -DTARGET_GENERIC -JC:\acados_ds1401\acados\external\blasfeo\include C:\acados_ds1401\acados\external\blasfeo\auxiliary\blasfeo_processor_features.c
+#	Source File: C:\acados_ds1401\acados\external\blasfeo\auxiliary\blasfeo_processor_features.c
+	.cputype	"603e/F"
+	.aloff
+	.endian	big
+	.lflags	nr
+	.equ	._PPC_EMB_initflag,1
+	.sect	.text
+	.align	4
+	.merge_start blasfeo_processor_feature_string,N,N
+	.globl	blasfeo_processor_feature_string
+blasfeo_processor_feature_string:
+	addi	5,0,0
+	rlwinm	6,3,0,31,31
+	cmpi	0,0x0,6,0
+	bc	12,2,L..3
+	addi	5,0,32
+	stb	5,0(4)
+	addi	5,0,65
+	stb	5,1(4)
+	addi	5,0,86
+	stb	5,2(4)
+	addi	5,0,88
+	stb	5,3(4)
+	addi	5,0,4
+L..3:
+	rlwinm	6,3,0,30,30
+	cmpi	0,0x0,6,0
+	bc	12,2,L..5
+	addi	6,0,32
+	ori	7,5,0
+	stbx	6,4,7
+	addic	7,5,1
+	ori	5,7,0
+	addi	6,0,65
+	stbx	6,4,7
+	addic	7,5,1
+	ori	5,7,0
+	addi	6,0,86
+	stbx	6,4,7
+	addic	7,5,1
+	ori	5,7,0
+	addi	6,0,88
+	stbx	6,4,7
+	addic	7,5,1
+	ori	5,7,0
+	addi	6,0,50
+	stbx	6,4,7
+	addic	5,5,1
+L..5:
+	rlwinm	6,3,0,29,29
+	cmpi	0,0x0,6,0
+	bc	12,2,L..7
+	addi	6,0,32
+	ori	7,5,0
+	stbx	6,4,7
+	addic	7,5,1
+	ori	5,7,0
+	addi	6,0,70
+	stbx	6,4,7
+	addic	7,5,1
+	ori	5,7,0
+	addi	6,0,77
+	stbx	6,4,7
+	addic	7,5,1
+	ori	5,7,0
+	addi	6,0,65
+	stbx	6,4,7
+	addic	5,5,1
+L..7:
+	rlwinm	3,3,0,28,28
+	cmpi	0,0x0,3,0
+	bc	12,2,L..9
+	addi	3,0,32
+	ori	6,5,0
+	stbx	3,4,6
+	addic	6,5,1
+	ori	5,6,0
+	addi	3,0,83
+	stbx	3,4,6
+	addic	6,5,1
+	ori	5,6,0
+	stbx	3,4,6
+	addic	6,5,1
+	ori	5,6,0
+	addi	3,0,69
+	stbx	3,4,6
+	addic	6,5,1
+	ori	5,6,0
+	addi	3,0,51
+	stbx	3,4,6
+	addic	5,5,1
+L..9:
+	addi	3,0,0
+	stbx	3,4,5
+CLRET.blasfeo_processor_feature_string:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start blasfeo_processor_library_string,N,N
+	.globl	blasfeo_processor_library_string
+blasfeo_processor_library_string:
+	stwu	1,-24(1)
+	mflr	0
+	stw	30,16(1)
+	stw	31,20(1)
+	stw	0,28(1)
+	ori	31,3,0
+	addi	30,0,0
+	addic	3,1,8
+	stw	30,8(1)
+	bl	blasfeo_processor_library_features
+	lwz	30,8(1)
+	ori	3,30,0
+	ori	4,31,0
+	bl	blasfeo_processor_feature_string
+CLRET.blasfeo_processor_library_string:
+	lwz	0,28(1)
+	mtlr	0
+	lwz	30,16(1)
+	lwz	31,20(1)
+	addi	1,1,24
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start blasfeo_processor_library_features,N,N
+	.globl	blasfeo_processor_library_features
+blasfeo_processor_library_features:
+	addi	4,0,0
+	stw	4,0(3)
+CLRET.blasfeo_processor_library_features:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start blasfeo_processor_cpu_features,N,N
+	.globl	blasfeo_processor_cpu_features
+blasfeo_processor_cpu_features:
+	stwu	1,-24(1)
+	mflr	0
+	stw	29,12(1)
+	stw	30,16(1)
+	stw	31,20(1)
+	stw	0,28(1)
+	ori	31,3,0
+	addi	30,0,0
+	stw	30,0(31)
+	ori	29,30,0
+	addic	3,1,8
+	stw	29,8(1)
+	bl	blasfeo_processor_library_features
+	lwz	29,8(1)
+	lwz	3,0(31)
+	and	3,3,29
+	cmp	0,0x0,29,3
+	bc	4,2,L..17
+	addi	30,0,1
+L..17:
+	ori	3,30,0
+CLRET.blasfeo_processor_cpu_features:
+	lwz	0,28(1)
+	mtlr	0
+	lwz	29,12(1)
+	lwz	30,16(1)
+	lwz	31,20(1)
+	addi	1,1,24
+	bclr	20,0
+	.merge_end
+	.sect	.data
+	.align	8
+CLDATA.:
+	.sect	.data
+	.align	8
+CLRDATA.:
+	.sect	.rodata1
+	.align	8
+STRINGDATA.:
+	.sect	.rodata
+	.align	8
+CONSTDATA.:
+	.extern	BLASFEO_PROCESSOR_FEATURES
+	.sect	.bss
+	.align	4
+BLASFEO_PROCESSOR_FEATURES:	.space	4
+	.sect	.libinfo
+	.byte	"behp#603e#"

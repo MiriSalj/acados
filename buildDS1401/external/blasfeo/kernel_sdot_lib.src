@@ -1,0 +1,92 @@
+#	 Microtec C/C++ PowerPC Compiler
+	#	"Mentor Graphics ANSI_C Front End 3.8.5   ; Back End 3.8.6   "
+	.file	"kernel_sdot_lib.c"
+#	Options: -x -xG -ze -f -p603e -DDS_PLATFORM_PPC -DWINDOWS_SKIP_PTR_ALIGNMENT_CHECK -D_DS1401 -D__DSPACE__ -JC:\acados_ds1401\acados\external\blasfeo\include -JC:\dSPACE RCPHIL 2017-B\DS1401\RTLib -DLA_HIGH_PERFORMANCE -DMF_PANELMAJ -DK_MAX_STACK=300 -DOS_WINDOWS -DEXTERNAL_BLAS_NONE -DTARGET_GENERIC -JC:\acados_ds1401\acados\external\blasfeo\include C:\acados_ds1401\acados\external\blasfeo\kernel\generic\kernel_sdot_lib.c
+#	Source File: C:\acados_ds1401\acados\external\blasfeo\kernel\generic\kernel_sdot_lib.c
+	.cputype	"603e/F"
+	.aloff
+	.endian	big
+	.lflags	nr
+	.equ	._PPC_EMB_initflag,1
+	.sect	.text
+	.align	4
+	.merge_start kernel_sdot_11_lib,N,N
+	.globl	kernel_sdot_11_lib
+kernel_sdot_11_lib:
+	stwu	1,-24(1)
+	LD_SINGLE	1,7,CONSTDATA.
+	stfs	1,8(1)
+	stfs	1,12(1)
+	stfs	1,16(1)
+	stfs	1,20(1)
+	addi	7,0,0
+	subic	8,3,3
+	fmr	4,1
+	fmr	3,1
+	fmr	2,1
+	addic	9,8,3
+	srawi	9,9,2
+	mtctr	9
+	cmpi	0,0x0,8,0
+	bc	4,1,L..3
+L..2:
+	lfs	5,0(5)
+	lfs	6,0(4)
+	fmadds	4,5,6,4
+	stfs	4,8(1)
+	lfs	5,4(5)
+	lfs	6,4(4)
+	fmadds	3,5,6,3
+	stfs	3,12(1)
+	lfs	5,8(5)
+	lfs	6,8(4)
+	fmadds	2,5,6,2
+	stfs	2,16(1)
+	lfs	5,12(5)
+	lfs	6,12(4)
+	fmadds	1,5,6,1
+	stfs	1,20(1)
+	addic	7,7,4
+	addic	5,5,16
+	addic	4,4,16
+	bc	16,0,L..2
+L..3:
+	subfc	8,7,3
+	mtctr	8
+	cmp	0,0x0,7,3
+	bc	4,0,L..5
+L..4:
+	lfs	5,0(5)
+	lfs	6,0(4)
+	fmadds	4,5,6,4
+	stfs	4,8(1)
+	addic	5,5,4
+	addic	4,4,4
+	bc	16,0,L..4
+L..5:
+	fadds	3,4,3
+	fadds	2,3,2
+	fadds	1,2,1
+	stfs	1,0(6)
+CLRET.kernel_sdot_11_lib:
+	addi	1,1,24
+	bclr	20,0
+	.merge_end
+	.extern	__fltused
+	.sect	.data
+	.align	8
+CLDATA.:
+	.sect	.data
+	.align	8
+CLRDATA.:
+	.sect	.rodata1
+	.align	8
+STRINGDATA.:
+	.sect	.rodata
+	.align	8
+CONSTDATA.:
+	.sect	.rodata
+	.long	0
+
+	.sect	.libinfo
+	.byte	"behp#603e#"

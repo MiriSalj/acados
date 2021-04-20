@@ -1,0 +1,107 @@
+#	 Microtec C/C++ PowerPC Compiler
+	#	"Mentor Graphics ANSI_C Front End 3.8.5   ; Back End 3.8.6   "
+	.file	"kernel_d_aux_lib.c"
+#	Options: -x -xG -ze -f -p603e -DDS_PLATFORM_PPC -DWINDOWS_SKIP_PTR_ALIGNMENT_CHECK -D_DS1401 -D__DSPACE__ -JC:\acados_ds1401\acados\external\blasfeo\include -JC:\dSPACE RCPHIL 2017-B\DS1401\RTLib -DLA_HIGH_PERFORMANCE -DMF_PANELMAJ -DK_MAX_STACK=300 -DOS_WINDOWS -DEXTERNAL_BLAS_NONE -DTARGET_GENERIC -JC:\acados_ds1401\acados\external\blasfeo\include C:\acados_ds1401\acados\external\blasfeo\kernel\generic\kernel_d_aux_lib.c
+#	Source File: C:\acados_ds1401\acados\external\blasfeo\kernel\generic\kernel_d_aux_lib.c
+	.cputype	"603e/F"
+	.aloff
+	.endian	big
+	.lflags	nr
+	.equ	._PPC_EMB_initflag,1
+	.sect	.text
+	.align	4
+	.merge_start kernel_dvecld_inc1,N,N
+	.globl	kernel_dvecld_inc1
+kernel_dvecld_inc1:
+	addi	5,0,0
+	addi	4,0,-8
+	and	4,3,4
+	cmpi	0,0x0,4,0
+	bc	4,1,L..4
+	subfc	4,5,4
+	addic	4,4,7
+	srawi	4,4,3
+	mtctr	4
+L..3:
+	addic	5,5,8
+	bc	16,0,L..3
+L..4:
+	cmp	0,0x0,5,3
+	bc	4,0,L..7
+	subfc	3,5,3
+	mtctr	3
+L..6:
+	bc	16,0,L..6
+L..7:
+CLRET.kernel_dvecld_inc1:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_dveccp_inc1,N,N
+	.globl	kernel_dveccp_inc1
+kernel_dveccp_inc1:
+	stwu	1,-16(1)
+	stw	30,8(1)
+	stw	31,12(1)
+	addi	30,0,0
+	addi	31,0,-4
+	and	31,3,31
+	cmpi	0,0x0,31,0
+	bc	4,1,L..12
+	addic	11,4,8
+	addic	10,5,8
+	addic	9,4,16
+	addic	8,5,16
+	addic	7,4,24
+	addic	6,5,24
+	addi	12,0,0
+	subfc	31,30,31
+	addic	31,31,3
+	srawi	31,31,2
+	mtctr	31
+L..11:
+	lfdx	1,4,12
+	stfdx	1,5,12
+	lfdx	1,11,12
+	stfdx	1,10,12
+	lfdx	1,9,12
+	stfdx	1,8,12
+	lfdx	1,7,12
+	stfdx	1,6,12
+	addic	12,12,32
+	addic	30,30,4
+	bc	16,0,L..11
+L..12:
+	cmp	0,0x0,30,3
+	bc	4,0,L..15
+	slwi	12,30,3
+	subfc	3,30,3
+	mtctr	3
+L..14:
+	lfdx	1,4,12
+	stfdx	1,5,12
+	addic	12,12,8
+	bc	16,0,L..14
+L..15:
+CLRET.kernel_dveccp_inc1:
+	lwz	30,8(1)
+	lwz	31,12(1)
+	addi	1,1,16
+	bclr	20,0
+	.merge_end
+	.extern	__fltused
+	.sect	.data
+	.align	8
+CLDATA.:
+	.sect	.data
+	.align	8
+CLRDATA.:
+	.sect	.rodata1
+	.align	8
+STRINGDATA.:
+	.sect	.rodata
+	.align	8
+CONSTDATA.:
+	.sect	.libinfo
+	.byte	"behp#603e#"

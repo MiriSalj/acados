@@ -1,0 +1,1290 @@
+#	 Microtec C/C++ PowerPC Compiler
+	#	"Mentor Graphics ANSI_C Front End 3.8.5   ; Back End 3.8.6   "
+	.file	"kernel_sgecp_lib4.c"
+#	Options: -x -xG -ze -f -p603e -DDS_PLATFORM_PPC -DWINDOWS_SKIP_PTR_ALIGNMENT_CHECK -D_DS1401 -D__DSPACE__ -JC:\acados_ds1401\acados\external\blasfeo\include -JC:\dSPACE RCPHIL 2017-B\DS1401\RTLib -DLA_HIGH_PERFORMANCE -DMF_PANELMAJ -DK_MAX_STACK=300 -DOS_WINDOWS -DEXTERNAL_BLAS_NONE -DTARGET_GENERIC -JC:\acados_ds1401\acados\external\blasfeo\include C:\acados_ds1401\acados\external\blasfeo\kernel\generic\kernel_sgecp_lib4.c
+#	Source File: C:\acados_ds1401\acados\external\blasfeo\kernel\generic\kernel_sgecp_lib4.c
+	.cputype	"603e/F"
+	.aloff
+	.endian	big
+	.lflags	nr
+	.equ	._PPC_EMB_initflag,1
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgecpsc_4_0_lib4,N,N
+	.globl	kernel_sgecpsc_4_0_lib4
+kernel_sgecpsc_4_0_lib4:
+	cmpi	1,0x0,3,0
+	bc	4,5,L..4
+	lfs	1,0(4)
+	mtctr	3
+	bc	4,5,L..4
+L..3:
+	lfs	2,0(5)
+	fmuls	2,1,2
+	stfs	2,0(6)
+	lfs	2,4(5)
+	fmuls	2,1,2
+	stfs	2,4(6)
+	lfs	2,8(5)
+	fmuls	2,1,2
+	stfs	2,8(6)
+	lfs	2,12(5)
+	fmuls	2,1,2
+	stfs	2,12(6)
+	addic	6,6,16
+	addic	5,5,16
+	bc	16,0,L..3
+L..4:
+CLRET.kernel_sgecpsc_4_0_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgecp_4_0_lib4,N,N
+	.globl	kernel_sgecp_4_0_lib4
+kernel_sgecp_4_0_lib4:
+	cmpi	0,0x0,3,0
+	bc	4,1,L..9
+	mtctr	3
+	cmpi	0,0x0,3,0
+	bc	4,1,L..9
+L..8:
+	lfs	1,0(4)
+	stfs	1,0(5)
+	lfs	1,4(4)
+	stfs	1,4(5)
+	lfs	1,8(4)
+	stfs	1,8(5)
+	lfs	1,12(4)
+	stfs	1,12(5)
+	addic	5,5,16
+	addic	4,4,16
+	bc	16,0,L..8
+L..9:
+CLRET.kernel_sgecp_4_0_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgecpsc_4_1_lib4,N,N
+	.globl	kernel_sgecpsc_4_1_lib4
+kernel_sgecpsc_4_1_lib4:
+	cmpi	1,0x0,3,0
+	bc	4,5,L..14
+	slwi	8,6,4
+	addc	8,5,8
+	lfs	1,0(4)
+	mtctr	3
+	bc	4,5,L..14
+L..13:
+	lfs	2,4(5)
+	fmuls	2,1,2
+	stfs	2,0(7)
+	lfs	2,8(5)
+	fmuls	2,1,2
+	stfs	2,4(7)
+	lfs	2,12(5)
+	fmuls	2,1,2
+	stfs	2,8(7)
+	lfs	2,0(8)
+	fmuls	2,1,2
+	stfs	2,12(7)
+	addic	7,7,16
+	addic	8,8,16
+	addic	5,5,16
+	bc	16,0,L..13
+L..14:
+CLRET.kernel_sgecpsc_4_1_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgecp_4_1_lib4,N,N
+	.globl	kernel_sgecp_4_1_lib4
+kernel_sgecp_4_1_lib4:
+	cmpi	0,0x0,3,0
+	bc	4,1,L..19
+	slwi	7,5,4
+	addc	7,4,7
+	mtctr	3
+	cmpi	0,0x0,3,0
+	bc	4,1,L..19
+L..18:
+	lfs	1,4(4)
+	stfs	1,0(6)
+	lfs	1,8(4)
+	stfs	1,4(6)
+	lfs	1,12(4)
+	stfs	1,8(6)
+	lfs	1,0(7)
+	stfs	1,12(6)
+	addic	6,6,16
+	addic	7,7,16
+	addic	4,4,16
+	bc	16,0,L..18
+L..19:
+CLRET.kernel_sgecp_4_1_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgecpsc_4_2_lib4,N,N
+	.globl	kernel_sgecpsc_4_2_lib4
+kernel_sgecpsc_4_2_lib4:
+	cmpi	1,0x0,3,0
+	bc	4,5,L..24
+	slwi	8,6,4
+	addc	8,5,8
+	lfs	1,0(4)
+	mtctr	3
+	bc	4,5,L..24
+L..23:
+	lfs	2,8(5)
+	fmuls	2,1,2
+	stfs	2,0(7)
+	lfs	2,12(5)
+	fmuls	2,1,2
+	stfs	2,4(7)
+	lfs	2,0(8)
+	fmuls	2,1,2
+	stfs	2,8(7)
+	lfs	2,4(8)
+	fmuls	2,1,2
+	stfs	2,12(7)
+	addic	7,7,16
+	addic	8,8,16
+	addic	5,5,16
+	bc	16,0,L..23
+L..24:
+CLRET.kernel_sgecpsc_4_2_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgecp_4_2_lib4,N,N
+	.globl	kernel_sgecp_4_2_lib4
+kernel_sgecp_4_2_lib4:
+	cmpi	0,0x0,3,0
+	bc	4,1,L..29
+	slwi	7,5,4
+	addc	7,4,7
+	mtctr	3
+	cmpi	0,0x0,3,0
+	bc	4,1,L..29
+L..28:
+	lfs	1,8(4)
+	stfs	1,0(6)
+	lfs	1,12(4)
+	stfs	1,4(6)
+	lfs	1,0(7)
+	stfs	1,8(6)
+	lfs	1,4(7)
+	stfs	1,12(6)
+	addic	6,6,16
+	addic	7,7,16
+	addic	4,4,16
+	bc	16,0,L..28
+L..29:
+CLRET.kernel_sgecp_4_2_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgecpsc_4_3_lib4,N,N
+	.globl	kernel_sgecpsc_4_3_lib4
+kernel_sgecpsc_4_3_lib4:
+	cmpi	1,0x0,3,0
+	bc	4,5,L..34
+	slwi	8,6,4
+	addc	8,5,8
+	lfs	1,0(4)
+	mtctr	3
+	bc	4,5,L..34
+L..33:
+	lfs	2,12(5)
+	fmuls	2,1,2
+	stfs	2,0(7)
+	lfs	2,0(8)
+	fmuls	2,1,2
+	stfs	2,4(7)
+	lfs	2,4(8)
+	fmuls	2,1,2
+	stfs	2,8(7)
+	lfs	2,8(8)
+	fmuls	2,1,2
+	stfs	2,12(7)
+	addic	7,7,16
+	addic	8,8,16
+	addic	5,5,16
+	bc	16,0,L..33
+L..34:
+CLRET.kernel_sgecpsc_4_3_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgecp_4_3_lib4,N,N
+	.globl	kernel_sgecp_4_3_lib4
+kernel_sgecp_4_3_lib4:
+	cmpi	0,0x0,3,0
+	bc	4,1,L..39
+	slwi	7,5,4
+	addc	7,4,7
+	mtctr	3
+	cmpi	0,0x0,3,0
+	bc	4,1,L..39
+L..38:
+	lfs	1,12(4)
+	stfs	1,0(6)
+	lfs	1,0(7)
+	stfs	1,4(6)
+	lfs	1,4(7)
+	stfs	1,8(6)
+	lfs	1,8(7)
+	stfs	1,12(6)
+	addic	6,6,16
+	addic	7,7,16
+	addic	4,4,16
+	bc	16,0,L..38
+L..39:
+CLRET.kernel_sgecp_4_3_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgecpsc_3_0_lib4,N,N
+	.globl	kernel_sgecpsc_3_0_lib4
+kernel_sgecpsc_3_0_lib4:
+	cmpi	1,0x0,3,0
+	bc	4,5,L..44
+	lfs	1,0(4)
+	mtctr	3
+	bc	4,5,L..44
+L..43:
+	lfs	2,0(5)
+	fmuls	2,1,2
+	stfs	2,0(6)
+	lfs	2,4(5)
+	fmuls	2,1,2
+	stfs	2,4(6)
+	lfs	2,8(5)
+	fmuls	2,1,2
+	stfs	2,8(6)
+	addic	6,6,16
+	addic	5,5,16
+	bc	16,0,L..43
+L..44:
+CLRET.kernel_sgecpsc_3_0_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgecp_3_0_lib4,N,N
+	.globl	kernel_sgecp_3_0_lib4
+kernel_sgecp_3_0_lib4:
+	cmpi	0,0x0,3,0
+	bc	4,1,L..49
+	mtctr	3
+	cmpi	0,0x0,3,0
+	bc	4,1,L..49
+L..48:
+	lfs	1,0(4)
+	stfs	1,0(5)
+	lfs	1,4(4)
+	stfs	1,4(5)
+	lfs	1,8(4)
+	stfs	1,8(5)
+	addic	5,5,16
+	addic	4,4,16
+	bc	16,0,L..48
+L..49:
+CLRET.kernel_sgecp_3_0_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgecpsc_3_2_lib4,N,N
+	.globl	kernel_sgecpsc_3_2_lib4
+kernel_sgecpsc_3_2_lib4:
+	cmpi	1,0x0,3,0
+	bc	4,5,L..54
+	slwi	8,6,4
+	addc	8,5,8
+	lfs	1,0(4)
+	mtctr	3
+	bc	4,5,L..54
+L..53:
+	lfs	2,8(5)
+	fmuls	2,1,2
+	stfs	2,0(7)
+	lfs	2,12(5)
+	fmuls	2,1,2
+	stfs	2,4(7)
+	lfs	2,0(8)
+	fmuls	2,1,2
+	stfs	2,8(7)
+	addic	7,7,16
+	addic	8,8,16
+	addic	5,5,16
+	bc	16,0,L..53
+L..54:
+CLRET.kernel_sgecpsc_3_2_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgecp_3_2_lib4,N,N
+	.globl	kernel_sgecp_3_2_lib4
+kernel_sgecp_3_2_lib4:
+	cmpi	0,0x0,3,0
+	bc	4,1,L..59
+	slwi	7,5,4
+	addc	7,4,7
+	mtctr	3
+	cmpi	0,0x0,3,0
+	bc	4,1,L..59
+L..58:
+	lfs	1,8(4)
+	stfs	1,0(6)
+	lfs	1,12(4)
+	stfs	1,4(6)
+	lfs	1,0(7)
+	stfs	1,8(6)
+	addic	6,6,16
+	addic	7,7,16
+	addic	4,4,16
+	bc	16,0,L..58
+L..59:
+CLRET.kernel_sgecp_3_2_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgecpsc_3_3_lib4,N,N
+	.globl	kernel_sgecpsc_3_3_lib4
+kernel_sgecpsc_3_3_lib4:
+	cmpi	1,0x0,3,0
+	bc	4,5,L..64
+	slwi	8,6,4
+	addc	8,5,8
+	lfs	1,0(4)
+	mtctr	3
+	bc	4,5,L..64
+L..63:
+	lfs	2,12(5)
+	fmuls	2,1,2
+	stfs	2,0(7)
+	lfs	2,0(8)
+	fmuls	2,1,2
+	stfs	2,4(7)
+	lfs	2,4(8)
+	fmuls	2,1,2
+	stfs	2,8(7)
+	addic	7,7,16
+	addic	8,8,16
+	addic	5,5,16
+	bc	16,0,L..63
+L..64:
+CLRET.kernel_sgecpsc_3_3_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgecp_3_3_lib4,N,N
+	.globl	kernel_sgecp_3_3_lib4
+kernel_sgecp_3_3_lib4:
+	cmpi	0,0x0,3,0
+	bc	4,1,L..69
+	slwi	7,5,4
+	addc	7,4,7
+	mtctr	3
+	cmpi	0,0x0,3,0
+	bc	4,1,L..69
+L..68:
+	lfs	1,12(4)
+	stfs	1,0(6)
+	lfs	1,0(7)
+	stfs	1,4(6)
+	lfs	1,4(7)
+	stfs	1,8(6)
+	addic	6,6,16
+	addic	7,7,16
+	addic	4,4,16
+	bc	16,0,L..68
+L..69:
+CLRET.kernel_sgecp_3_3_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgecpsc_2_0_lib4,N,N
+	.globl	kernel_sgecpsc_2_0_lib4
+kernel_sgecpsc_2_0_lib4:
+	cmpi	1,0x0,3,0
+	bc	4,5,L..74
+	lfs	1,0(4)
+	mtctr	3
+	bc	4,5,L..74
+L..73:
+	lfs	2,0(5)
+	fmuls	2,1,2
+	stfs	2,0(6)
+	lfs	2,4(5)
+	fmuls	2,1,2
+	stfs	2,4(6)
+	addic	6,6,16
+	addic	5,5,16
+	bc	16,0,L..73
+L..74:
+CLRET.kernel_sgecpsc_2_0_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgecp_2_0_lib4,N,N
+	.globl	kernel_sgecp_2_0_lib4
+kernel_sgecp_2_0_lib4:
+	cmpi	1,0x0,3,0
+	bc	4,5,L..79
+	mtctr	3
+	bc	4,5,L..79
+L..78:
+	lfs	1,0(4)
+	stfs	1,0(5)
+	lfs	1,4(4)
+	stfs	1,4(5)
+	addic	5,5,16
+	addic	4,4,16
+	bc	16,0,L..78
+L..79:
+CLRET.kernel_sgecp_2_0_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgecpsc_2_3_lib4,N,N
+	.globl	kernel_sgecpsc_2_3_lib4
+kernel_sgecpsc_2_3_lib4:
+	cmpi	1,0x0,3,0
+	bc	4,5,L..84
+	lfs	1,0(4)
+	slwi	8,6,4
+	addc	8,5,8
+	mtctr	3
+	bc	4,5,L..84
+L..83:
+	lfs	2,12(5)
+	fmuls	2,1,2
+	stfs	2,0(7)
+	lfs	2,0(8)
+	fmuls	2,1,2
+	stfs	2,4(7)
+	addic	7,7,16
+	addic	8,8,16
+	addic	5,5,16
+	bc	16,0,L..83
+L..84:
+CLRET.kernel_sgecpsc_2_3_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgecp_2_3_lib4,N,N
+	.globl	kernel_sgecp_2_3_lib4
+kernel_sgecp_2_3_lib4:
+	cmpi	1,0x0,3,0
+	bc	4,5,L..89
+	slwi	7,5,4
+	addc	7,4,7
+	mtctr	3
+	bc	4,5,L..89
+L..88:
+	lfs	1,12(4)
+	stfs	1,0(6)
+	lfs	1,0(7)
+	stfs	1,4(6)
+	addic	6,6,16
+	addic	7,7,16
+	addic	4,4,16
+	bc	16,0,L..88
+L..89:
+CLRET.kernel_sgecp_2_3_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgecpsc_1_0_lib4,N,N
+	.globl	kernel_sgecpsc_1_0_lib4
+kernel_sgecpsc_1_0_lib4:
+	cmpi	1,0x0,3,0
+	bc	4,5,L..94
+	lfs	1,0(4)
+	mtctr	3
+	bc	4,5,L..94
+L..93:
+	lfs	2,0(5)
+	fmuls	2,1,2
+	stfs	2,0(6)
+	addic	6,6,16
+	addic	5,5,16
+	bc	16,0,L..93
+L..94:
+CLRET.kernel_sgecpsc_1_0_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgecp_1_0_lib4,N,N
+	.globl	kernel_sgecp_1_0_lib4
+kernel_sgecp_1_0_lib4:
+	cmpi	0,0x0,3,0
+	bc	4,1,L..101
+	addi	6,0,0
+	addi	7,0,-4
+	and	7,3,7
+	addic	8,7,3
+	srawi	8,8,2
+	mtctr	8
+	cmpi	0,0x0,7,0
+	bc	4,1,L..99
+L..98:
+	lfs	1,0(4)
+	stfs	1,0(5)
+	addic	4,4,16
+	lfs	1,0(4)
+	addic	5,5,16
+	stfs	1,0(5)
+	addic	4,4,16
+	lfs	1,0(4)
+	addic	5,5,16
+	stfs	1,0(5)
+	addic	4,4,16
+	lfs	1,0(4)
+	addic	5,5,16
+	stfs	1,0(5)
+	addic	6,6,4
+	addic	5,5,16
+	addic	4,4,16
+	bc	16,0,L..98
+L..99:
+	subfc	7,6,3
+	mtctr	7
+	cmp	0,0x0,6,3
+	bc	4,0,L..101
+L..100:
+	lfs	1,0(4)
+	stfs	1,0(5)
+	addic	5,5,16
+	addic	4,4,16
+	bc	16,0,L..100
+L..101:
+CLRET.kernel_sgecp_1_0_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_strcp_l_4_0_lib4,N,N
+	.globl	kernel_strcp_l_4_0_lib4
+kernel_strcp_l_4_0_lib4:
+	addic	6,3,1
+	cmpi	1,0x0,6,0
+	bc	4,5,L..107
+	ori	3,6,0
+	mtctr	3
+	bc	4,5,L..106
+L..105:
+	lfs	1,0(4)
+	stfs	1,0(5)
+	lfs	1,4(4)
+	stfs	1,4(5)
+	lfs	1,8(4)
+	stfs	1,8(5)
+	lfs	1,12(4)
+	stfs	1,12(5)
+	addic	5,5,16
+	addic	4,4,16
+	bc	16,0,L..105
+L..106:
+	lfs	1,4(4)
+	stfs	1,4(5)
+	lfs	1,8(4)
+	stfs	1,8(5)
+	lfs	1,12(4)
+	stfs	1,12(5)
+	lfs	1,24(4)
+	stfs	1,24(5)
+	lfs	1,28(4)
+	stfs	1,28(5)
+	lfs	1,44(4)
+	stfs	1,44(5)
+L..107:
+CLRET.kernel_strcp_l_4_0_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_strcp_l_4_1_lib4,N,N
+	.globl	kernel_strcp_l_4_1_lib4
+kernel_strcp_l_4_1_lib4:
+	addic	7,3,1
+	cmpi	1,0x0,7,0
+	bc	4,5,L..113
+	slwi	3,5,4
+	addc	3,4,3
+	ori	5,7,0
+	mtctr	5
+	bc	4,5,L..112
+L..111:
+	lfs	1,4(4)
+	stfs	1,0(6)
+	lfs	1,8(4)
+	stfs	1,4(6)
+	lfs	1,12(4)
+	stfs	1,8(6)
+	lfs	1,0(3)
+	stfs	1,12(6)
+	addic	6,6,16
+	addic	3,3,16
+	addic	4,4,16
+	bc	16,0,L..111
+L..112:
+	lfs	1,8(4)
+	stfs	1,4(6)
+	lfs	1,12(4)
+	stfs	1,8(6)
+	lfs	1,0(3)
+	stfs	1,12(6)
+	lfs	1,28(4)
+	stfs	1,24(6)
+	lfs	1,16(3)
+	stfs	1,28(6)
+	lfs	1,32(3)
+	stfs	1,44(6)
+L..113:
+CLRET.kernel_strcp_l_4_1_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_strcp_l_4_2_lib4,N,N
+	.globl	kernel_strcp_l_4_2_lib4
+kernel_strcp_l_4_2_lib4:
+	addic	7,3,1
+	cmpi	1,0x0,7,0
+	bc	4,5,L..119
+	slwi	3,5,4
+	addc	3,4,3
+	ori	5,7,0
+	mtctr	5
+	bc	4,5,L..118
+L..117:
+	lfs	1,8(4)
+	stfs	1,0(6)
+	lfs	1,12(4)
+	stfs	1,4(6)
+	lfs	1,0(3)
+	stfs	1,8(6)
+	lfs	1,4(3)
+	stfs	1,12(6)
+	addic	6,6,16
+	addic	3,3,16
+	addic	4,4,16
+	bc	16,0,L..117
+L..118:
+	lfs	1,12(4)
+	stfs	1,4(6)
+	lfs	1,0(3)
+	stfs	1,8(6)
+	lfs	1,4(3)
+	stfs	1,12(6)
+	lfs	1,16(3)
+	stfs	1,24(6)
+	lfs	1,20(3)
+	stfs	1,28(6)
+	lfs	1,36(3)
+	stfs	1,44(6)
+L..119:
+CLRET.kernel_strcp_l_4_2_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_strcp_l_4_3_lib4,N,N
+	.globl	kernel_strcp_l_4_3_lib4
+kernel_strcp_l_4_3_lib4:
+	addic	7,3,1
+	cmpi	1,0x0,7,0
+	bc	4,5,L..125
+	slwi	3,5,4
+	addc	3,4,3
+	ori	5,7,0
+	mtctr	5
+	bc	4,5,L..124
+L..123:
+	lfs	1,12(4)
+	stfs	1,0(6)
+	lfs	1,0(3)
+	stfs	1,4(6)
+	lfs	1,4(3)
+	stfs	1,8(6)
+	lfs	1,8(3)
+	stfs	1,12(6)
+	addic	6,6,16
+	addic	3,3,16
+	addic	4,4,16
+	bc	16,0,L..123
+L..124:
+	lfs	1,0(3)
+	stfs	1,4(6)
+	lfs	1,4(3)
+	stfs	1,8(6)
+	lfs	1,8(3)
+	stfs	1,12(6)
+	lfs	1,20(3)
+	stfs	1,24(6)
+	lfs	1,24(3)
+	stfs	1,28(6)
+	lfs	1,40(3)
+	stfs	1,44(6)
+L..125:
+CLRET.kernel_strcp_l_4_3_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_strcp_l_3_0_lib4,N,N
+	.globl	kernel_strcp_l_3_0_lib4
+kernel_strcp_l_3_0_lib4:
+	addic	6,3,1
+	cmpi	1,0x0,6,0
+	bc	4,5,L..131
+	ori	3,6,0
+	mtctr	3
+	bc	4,5,L..130
+L..129:
+	lfs	1,0(4)
+	stfs	1,0(5)
+	lfs	1,4(4)
+	stfs	1,4(5)
+	lfs	1,8(4)
+	stfs	1,8(5)
+	addic	5,5,16
+	addic	4,4,16
+	bc	16,0,L..129
+L..130:
+	lfs	1,4(4)
+	stfs	1,4(5)
+	lfs	1,8(4)
+	stfs	1,8(5)
+	lfs	1,24(4)
+	stfs	1,24(5)
+L..131:
+CLRET.kernel_strcp_l_3_0_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_strcp_l_3_2_lib4,N,N
+	.globl	kernel_strcp_l_3_2_lib4
+kernel_strcp_l_3_2_lib4:
+	addic	7,3,1
+	cmpi	1,0x0,7,0
+	bc	4,5,L..137
+	slwi	3,5,4
+	addc	3,4,3
+	ori	5,7,0
+	mtctr	5
+	bc	4,5,L..136
+L..135:
+	lfs	1,8(4)
+	stfs	1,0(6)
+	lfs	1,12(4)
+	stfs	1,4(6)
+	lfs	1,0(3)
+	stfs	1,8(6)
+	addic	6,6,16
+	addic	3,3,16
+	addic	4,4,16
+	bc	16,0,L..135
+L..136:
+	lfs	1,12(4)
+	stfs	1,4(6)
+	lfs	1,0(3)
+	stfs	1,8(6)
+	lfs	1,16(3)
+	stfs	1,24(6)
+L..137:
+CLRET.kernel_strcp_l_3_2_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_strcp_l_3_3_lib4,N,N
+	.globl	kernel_strcp_l_3_3_lib4
+kernel_strcp_l_3_3_lib4:
+	addic	7,3,1
+	cmpi	1,0x0,7,0
+	bc	4,5,L..143
+	slwi	3,5,4
+	addc	3,4,3
+	ori	5,7,0
+	mtctr	5
+	bc	4,5,L..142
+L..141:
+	lfs	1,12(4)
+	stfs	1,0(6)
+	lfs	1,0(3)
+	stfs	1,4(6)
+	lfs	1,4(3)
+	stfs	1,8(6)
+	addic	6,6,16
+	addic	3,3,16
+	addic	4,4,16
+	bc	16,0,L..141
+L..142:
+	lfs	1,0(3)
+	stfs	1,4(6)
+	lfs	1,4(3)
+	stfs	1,8(6)
+	lfs	1,20(3)
+	stfs	1,24(6)
+L..143:
+CLRET.kernel_strcp_l_3_3_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_strcp_l_2_0_lib4,N,N
+	.globl	kernel_strcp_l_2_0_lib4
+kernel_strcp_l_2_0_lib4:
+	addic	6,3,1
+	cmpi	1,0x0,6,0
+	bc	4,5,L..149
+	mtctr	6
+	bc	4,5,L..148
+L..147:
+	lfs	1,0(4)
+	stfs	1,0(5)
+	lfs	1,4(4)
+	stfs	1,4(5)
+	addic	5,5,16
+	addic	4,4,16
+	bc	16,0,L..147
+L..148:
+	lfs	1,4(4)
+	stfs	1,4(5)
+L..149:
+CLRET.kernel_strcp_l_2_0_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_strcp_l_2_3_lib4,N,N
+	.globl	kernel_strcp_l_2_3_lib4
+kernel_strcp_l_2_3_lib4:
+	addic	7,3,1
+	cmpi	1,0x0,7,0
+	bc	4,5,L..155
+	slwi	3,5,4
+	addc	3,4,3
+	mtctr	7
+	bc	4,5,L..154
+L..153:
+	lfs	1,12(4)
+	stfs	1,0(6)
+	lfs	1,0(3)
+	stfs	1,4(6)
+	addic	6,6,16
+	addic	3,3,16
+	addic	4,4,16
+	bc	16,0,L..153
+L..154:
+	lfs	1,0(3)
+	stfs	1,4(6)
+L..155:
+CLRET.kernel_strcp_l_2_3_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_strcp_l_1_0_lib4,N,N
+	.globl	kernel_strcp_l_1_0_lib4
+kernel_strcp_l_1_0_lib4:
+	addic	6,3,1
+	cmpi	0,0x0,6,0
+	bc	4,1,L..162
+	addi	3,0,0
+	addi	7,0,-4
+	and	7,6,7
+	addic	8,7,3
+	srawi	8,8,2
+	mtctr	8
+	cmpi	0,0x0,7,0
+	bc	4,1,L..160
+L..159:
+	lfs	1,0(4)
+	stfs	1,0(5)
+	addic	4,4,16
+	lfs	1,0(4)
+	addic	5,5,16
+	stfs	1,0(5)
+	addic	4,4,16
+	lfs	1,0(4)
+	addic	5,5,16
+	stfs	1,0(5)
+	addic	4,4,16
+	lfs	1,0(4)
+	addic	5,5,16
+	stfs	1,0(5)
+	addic	3,3,4
+	addic	5,5,16
+	addic	4,4,16
+	bc	16,0,L..159
+L..160:
+	subfc	7,3,6
+	mtctr	7
+	cmp	0,0x0,3,6
+	bc	4,0,L..162
+L..161:
+	lfs	1,0(4)
+	stfs	1,0(5)
+	addic	5,5,16
+	addic	4,4,16
+	bc	16,0,L..161
+L..162:
+CLRET.kernel_strcp_l_1_0_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgead_4_0_lib4,N,N
+	.globl	kernel_sgead_4_0_lib4
+kernel_sgead_4_0_lib4:
+	cmpi	1,0x0,3,0
+	bc	4,5,L..167
+	lfs	1,0(4)
+	mtctr	3
+	bc	4,5,L..167
+L..166:
+	lfs	2,0(5)
+	lfs	3,0(6)
+	fmadds	2,1,2,3
+	stfs	2,0(6)
+	lfs	2,4(5)
+	lfs	3,4(6)
+	fmadds	2,1,2,3
+	stfs	2,4(6)
+	lfs	2,8(5)
+	lfs	3,8(6)
+	fmadds	2,1,2,3
+	stfs	2,8(6)
+	lfs	2,12(5)
+	lfs	3,12(6)
+	fmadds	2,1,2,3
+	stfs	2,12(6)
+	addic	6,6,16
+	addic	5,5,16
+	bc	16,0,L..166
+L..167:
+CLRET.kernel_sgead_4_0_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgead_4_1_lib4,N,N
+	.globl	kernel_sgead_4_1_lib4
+kernel_sgead_4_1_lib4:
+	cmpi	1,0x0,3,0
+	bc	4,5,L..172
+	lfs	1,0(4)
+	slwi	8,6,4
+	addc	8,5,8
+	mtctr	3
+	bc	4,5,L..172
+L..171:
+	lfs	2,4(5)
+	lfs	3,0(7)
+	fmadds	2,1,2,3
+	stfs	2,0(7)
+	lfs	2,8(5)
+	lfs	3,4(7)
+	fmadds	2,1,2,3
+	stfs	2,4(7)
+	lfs	2,12(5)
+	lfs	3,8(7)
+	fmadds	2,1,2,3
+	stfs	2,8(7)
+	lfs	2,0(8)
+	lfs	3,12(7)
+	fmadds	2,1,2,3
+	stfs	2,12(7)
+	addic	7,7,16
+	addic	8,8,16
+	addic	5,5,16
+	bc	16,0,L..171
+L..172:
+CLRET.kernel_sgead_4_1_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgead_4_2_lib4,N,N
+	.globl	kernel_sgead_4_2_lib4
+kernel_sgead_4_2_lib4:
+	cmpi	1,0x0,3,0
+	bc	4,5,L..177
+	lfs	1,0(4)
+	slwi	8,6,4
+	addc	8,5,8
+	mtctr	3
+	bc	4,5,L..177
+L..176:
+	lfs	2,8(5)
+	lfs	3,0(7)
+	fmadds	2,1,2,3
+	stfs	2,0(7)
+	lfs	2,12(5)
+	lfs	3,4(7)
+	fmadds	2,1,2,3
+	stfs	2,4(7)
+	lfs	2,0(8)
+	lfs	3,8(7)
+	fmadds	2,1,2,3
+	stfs	2,8(7)
+	lfs	2,4(8)
+	lfs	3,12(7)
+	fmadds	2,1,2,3
+	stfs	2,12(7)
+	addic	7,7,16
+	addic	8,8,16
+	addic	5,5,16
+	bc	16,0,L..176
+L..177:
+CLRET.kernel_sgead_4_2_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgead_4_3_lib4,N,N
+	.globl	kernel_sgead_4_3_lib4
+kernel_sgead_4_3_lib4:
+	cmpi	1,0x0,3,0
+	bc	4,5,L..182
+	lfs	1,0(4)
+	slwi	8,6,4
+	addc	8,5,8
+	mtctr	3
+	bc	4,5,L..182
+L..181:
+	lfs	2,12(5)
+	lfs	3,0(7)
+	fmadds	2,1,2,3
+	stfs	2,0(7)
+	lfs	2,0(8)
+	lfs	3,4(7)
+	fmadds	2,1,2,3
+	stfs	2,4(7)
+	lfs	2,4(8)
+	lfs	3,8(7)
+	fmadds	2,1,2,3
+	stfs	2,8(7)
+	lfs	2,8(8)
+	lfs	3,12(7)
+	fmadds	2,1,2,3
+	stfs	2,12(7)
+	addic	7,7,16
+	addic	8,8,16
+	addic	5,5,16
+	bc	16,0,L..181
+L..182:
+CLRET.kernel_sgead_4_3_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgead_3_0_lib4,N,N
+	.globl	kernel_sgead_3_0_lib4
+kernel_sgead_3_0_lib4:
+	cmpi	1,0x0,3,0
+	bc	4,5,L..187
+	lfs	1,0(4)
+	mtctr	3
+	bc	4,5,L..187
+L..186:
+	lfs	2,0(5)
+	lfs	3,0(6)
+	fmadds	2,1,2,3
+	stfs	2,0(6)
+	lfs	2,4(5)
+	lfs	3,4(6)
+	fmadds	2,1,2,3
+	stfs	2,4(6)
+	lfs	2,8(5)
+	lfs	3,8(6)
+	fmadds	2,1,2,3
+	stfs	2,8(6)
+	addic	6,6,16
+	addic	5,5,16
+	bc	16,0,L..186
+L..187:
+CLRET.kernel_sgead_3_0_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgead_3_2_lib4,N,N
+	.globl	kernel_sgead_3_2_lib4
+kernel_sgead_3_2_lib4:
+	cmpi	1,0x0,3,0
+	bc	4,5,L..192
+	lfs	1,0(4)
+	slwi	8,6,4
+	addc	8,5,8
+	mtctr	3
+	bc	4,5,L..192
+L..191:
+	lfs	2,8(5)
+	lfs	3,0(7)
+	fmadds	2,1,2,3
+	stfs	2,0(7)
+	lfs	2,12(5)
+	lfs	3,4(7)
+	fmadds	2,1,2,3
+	stfs	2,4(7)
+	lfs	2,0(8)
+	lfs	3,8(7)
+	fmadds	2,1,2,3
+	stfs	2,8(7)
+	addic	7,7,16
+	addic	8,8,16
+	addic	5,5,16
+	bc	16,0,L..191
+L..192:
+CLRET.kernel_sgead_3_2_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgead_3_3_lib4,N,N
+	.globl	kernel_sgead_3_3_lib4
+kernel_sgead_3_3_lib4:
+	cmpi	1,0x0,3,0
+	bc	4,5,L..197
+	lfs	1,0(4)
+	slwi	8,6,4
+	addc	8,5,8
+	mtctr	3
+	bc	4,5,L..197
+L..196:
+	lfs	2,12(5)
+	lfs	3,0(7)
+	fmadds	2,1,2,3
+	stfs	2,0(7)
+	lfs	2,0(8)
+	lfs	3,4(7)
+	fmadds	2,1,2,3
+	stfs	2,4(7)
+	lfs	2,4(8)
+	lfs	3,8(7)
+	fmadds	2,1,2,3
+	stfs	2,8(7)
+	addic	7,7,16
+	addic	8,8,16
+	addic	5,5,16
+	bc	16,0,L..196
+L..197:
+CLRET.kernel_sgead_3_3_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgead_2_0_lib4,N,N
+	.globl	kernel_sgead_2_0_lib4
+kernel_sgead_2_0_lib4:
+	cmpi	1,0x0,3,0
+	bc	4,5,L..202
+	lfs	1,0(4)
+	mtctr	3
+	bc	4,5,L..202
+L..201:
+	lfs	2,0(5)
+	lfs	3,0(6)
+	fmadds	2,1,2,3
+	stfs	2,0(6)
+	lfs	2,4(5)
+	lfs	3,4(6)
+	fmadds	2,1,2,3
+	stfs	2,4(6)
+	addic	6,6,16
+	addic	5,5,16
+	bc	16,0,L..201
+L..202:
+CLRET.kernel_sgead_2_0_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgead_2_3_lib4,N,N
+	.globl	kernel_sgead_2_3_lib4
+kernel_sgead_2_3_lib4:
+	cmpi	1,0x0,3,0
+	bc	4,5,L..207
+	lfs	1,0(4)
+	slwi	8,6,4
+	addc	8,5,8
+	mtctr	3
+	bc	4,5,L..207
+L..206:
+	lfs	2,12(5)
+	lfs	3,0(7)
+	fmadds	2,1,2,3
+	stfs	2,0(7)
+	lfs	2,0(8)
+	lfs	3,4(7)
+	fmadds	2,1,2,3
+	stfs	2,4(7)
+	addic	7,7,16
+	addic	8,8,16
+	addic	5,5,16
+	bc	16,0,L..206
+L..207:
+CLRET.kernel_sgead_2_3_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgead_1_0_lib4,N,N
+	.globl	kernel_sgead_1_0_lib4
+kernel_sgead_1_0_lib4:
+	cmpi	1,0x0,3,0
+	bc	4,5,L..212
+	lfs	1,0(4)
+	mtctr	3
+	bc	4,5,L..212
+L..211:
+	lfs	2,0(5)
+	lfs	3,0(6)
+	fmadds	2,1,2,3
+	stfs	2,0(6)
+	addic	6,6,16
+	addic	5,5,16
+	bc	16,0,L..211
+L..212:
+CLRET.kernel_sgead_1_0_lib4:
+	bclr	20,0
+	.merge_end
+	.extern	__fltused
+	.sect	.data
+	.align	8
+CLDATA.:
+	.sect	.data
+	.align	8
+CLRDATA.:
+	.sect	.rodata1
+	.align	8
+STRINGDATA.:
+	.sect	.rodata
+	.align	8
+CONSTDATA.:
+	.sect	.libinfo
+	.byte	"behp#603e#"

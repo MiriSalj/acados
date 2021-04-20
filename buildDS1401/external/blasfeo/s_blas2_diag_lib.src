@@ -1,0 +1,156 @@
+#	 Microtec C/C++ PowerPC Compiler
+	#	"Mentor Graphics ANSI_C Front End 3.8.5   ; Back End 3.8.6   "
+	.file	"s_blas2_diag_lib.c"
+#	Options: -x -xG -ze -f -p603e -DDS_PLATFORM_PPC -DWINDOWS_SKIP_PTR_ALIGNMENT_CHECK -D_DS1401 -D__DSPACE__ -JC:\acados_ds1401\acados\external\blasfeo\include -JC:\dSPACE RCPHIL 2017-B\DS1401\RTLib -DLA_HIGH_PERFORMANCE -DMF_PANELMAJ -DK_MAX_STACK=300 -DOS_WINDOWS -DEXTERNAL_BLAS_NONE -DTARGET_GENERIC -JC:\acados_ds1401\acados\external\blasfeo\include C:\acados_ds1401\acados\external\blasfeo\blasfeo_hp_pm\s_blas2_diag_lib.c
+#	Source File: C:\acados_ds1401\acados\external\blasfeo\blasfeo_hp_pm\s_blas2_diag_lib.c
+	.cputype	"603e/F"
+	.aloff
+	.endian	big
+	.lflags	nr
+	.equ	._PPC_EMB_initflag,1
+	.sect	.text
+	.align	4
+	.merge_start blasfeo_hp_sgemv_d,N,N
+	.globl	blasfeo_hp_sgemv_d
+blasfeo_hp_sgemv_d:
+	stwu	1,-24(1)
+	stw	29,12(1)
+	stw	30,16(1)
+	stw	31,20(1)
+	lwz	29,32(1)
+	cmpi	1,0x0,3,0
+	bc	4,5,L..10
+	lwz	30,4(4)
+	slwi	4,5,2
+	addc	30,30,4
+	lwz	31,4(6)
+	slwi	4,7,2
+	addc	31,31,4
+	lwz	12,4(8)
+	slwi	4,9,2
+	addc	12,12,4
+	lwz	11,4(10)
+	slwi	4,29,2
+	addc	11,11,4
+	fmr	4,1
+	LD_DOUBLE	3,4,CONSTDATA.
+	fcmpu	0,4,3
+	bc	4,2,L..7
+	fmr	4,2
+	fcmpu	0,4,3
+	bc	4,2,L..7
+	addi	5,0,0
+	bc	4,5,L..10
+	addi	4,0,0
+L..6:
+	lfsx	1,30,4
+	lfsx	2,31,4
+	lfsx	3,12,4
+	fmadds	1,1,2,3
+	stfsx	1,11,4
+	addic	4,4,4
+	addic	5,5,1
+	cmp	0,0x0,5,3
+	bc	12,0,L..6
+	b	L..10
+L..7:
+	bc	4,5,L..10
+	addi	5,0,0
+	ori	4,5,0
+	subfc	3,5,3
+	mtctr	3
+L..9:
+	lfsx	3,30,4
+	fmuls	3,1,3
+	lfsx	4,31,4
+	lfsx	5,12,4
+	fmuls	5,2,5
+	fmadds	3,3,4,5
+	stfsx	3,11,4
+	addic	4,4,4
+	bc	16,0,L..9
+L..10:
+CLRET.blasfeo_hp_sgemv_d:
+	lwz	29,12(1)
+	lwz	30,16(1)
+	lwz	31,20(1)
+	addi	1,1,24
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start blasfeo_sgemv_d,N,N
+	.globl	blasfeo_sgemv_d
+blasfeo_sgemv_d:
+	stwu	1,-72(1)
+	mflr	0
+	stfd	30,56(1)
+	stfd	31,64(1)
+	stw	23,20(1)
+	stw	24,24(1)
+	stw	25,28(1)
+	stw	26,32(1)
+	stw	27,36(1)
+	stw	28,40(1)
+	stw	29,44(1)
+	stw	30,48(1)
+	stw	31,52(1)
+	stw	0,76(1)
+	fmr	31,2
+	fmr	30,1
+	ori	31,10,0
+	ori	30,9,0
+	ori	29,8,0
+	ori	28,7,0
+	ori	27,6,0
+	ori	26,5,0
+	ori	25,4,0
+	ori	24,3,0
+	lwz	23,80(1)
+	ori	3,24,0
+	fmr	1,30
+	ori	4,25,0
+	ori	5,26,0
+	ori	6,27,0
+	ori	7,28,0
+	fmr	2,31
+	ori	8,29,0
+	ori	9,30,0
+	ori	10,31,0
+	stw	23,8(1)
+	bl	blasfeo_hp_sgemv_d
+CLRET.blasfeo_sgemv_d:
+	lwz	0,76(1)
+	mtlr	0
+	lfd	30,56(1)
+	lfd	31,64(1)
+	lwz	23,20(1)
+	lwz	24,24(1)
+	lwz	25,28(1)
+	lwz	26,32(1)
+	lwz	27,36(1)
+	lwz	28,40(1)
+	lwz	29,44(1)
+	lwz	30,48(1)
+	lwz	31,52(1)
+	addi	1,1,72
+	bclr	20,0
+	.merge_end
+	.extern	__fltused
+	.sect	.data
+	.align	8
+CLDATA.:
+	.sect	.data
+	.align	8
+CLRDATA.:
+	.sect	.rodata1
+	.align	8
+STRINGDATA.:
+	.sect	.rodata
+	.align	8
+CONSTDATA.:
+	.sect	.rodata
+	.long	0x3ff00000
+	.long	0
+	.sect	.libinfo
+	.byte	"behp#603e#"

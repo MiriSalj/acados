@@ -1,0 +1,540 @@
+#	 Microtec C/C++ PowerPC Compiler
+	#	"Mentor Graphics ANSI_C Front End 3.8.5   ; Back End 3.8.6   "
+	.file	"kernel_sgetr_lib4.c"
+#	Options: -x -xG -ze -f -p603e -DDS_PLATFORM_PPC -DWINDOWS_SKIP_PTR_ALIGNMENT_CHECK -D_DS1401 -D__DSPACE__ -JC:\acados_ds1401\acados\external\blasfeo\include -JC:\dSPACE RCPHIL 2017-B\DS1401\RTLib -DLA_HIGH_PERFORMANCE -DMF_PANELMAJ -DK_MAX_STACK=300 -DOS_WINDOWS -DEXTERNAL_BLAS_NONE -DTARGET_GENERIC -JC:\acados_ds1401\acados\external\blasfeo\include C:\acados_ds1401\acados\external\blasfeo\kernel\generic\kernel_sgetr_lib4.c
+#	Source File: C:\acados_ds1401\acados\external\blasfeo\kernel\generic\kernel_sgetr_lib4.c
+	.cputype	"603e/F"
+	.aloff
+	.endian	big
+	.lflags	nr
+	.equ	._PPC_EMB_initflag,1
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgetr_4_lib4,N,N
+	.globl	kernel_sgetr_4_lib4
+kernel_sgetr_4_lib4:
+	cmpi	1,0x0,3,1
+	cmpi	6,0x0,5,0
+	bc	4,6,L..3
+	addic	4,4,1
+L..3:
+	addi	10,0,0
+	cmp	0,0x0,4,5
+	bc	12,0,L..11
+	subic	9,4,3
+	bc	4,25,L..8
+	subfc	3,10,5
+	mtctr	3
+	bc	4,25,L..7
+L..6:
+	lfs	2,0(6)
+	fmuls	2,1,2
+	stfs	2,0(7)
+	lfs	2,4(6)
+	fmuls	2,1,2
+	stfs	2,16(7)
+	lfs	2,8(6)
+	fmuls	2,1,2
+	stfs	2,32(7)
+	lfs	2,12(6)
+	fmuls	2,1,2
+	stfs	2,48(7)
+	addic	10,10,1
+	addic	6,6,16
+	addic	7,7,4
+	bc	16,0,L..6
+L..7:
+	slwi	3,8,4
+	subic	3,3,16
+	addc	7,7,3
+L..8:
+	cmp	0,0x0,10,9
+	bc	4,0,L..11
+	slwi	3,8,2
+	slwi	3,3,2
+	subfc	9,10,9
+	addic	9,9,3
+	srawi	9,9,2
+	mtctr	9
+L..10:
+	lfs	2,0(6)
+	fmuls	2,1,2
+	stfs	2,0(7)
+	lfs	2,4(6)
+	fmuls	2,1,2
+	stfs	2,16(7)
+	lfs	2,8(6)
+	fmuls	2,1,2
+	stfs	2,32(7)
+	lfs	2,12(6)
+	fmuls	2,1,2
+	stfs	2,48(7)
+	lfs	2,16(6)
+	fmuls	2,1,2
+	stfs	2,4(7)
+	lfs	2,20(6)
+	fmuls	2,1,2
+	stfs	2,20(7)
+	lfs	2,24(6)
+	fmuls	2,1,2
+	stfs	2,36(7)
+	lfs	2,28(6)
+	fmuls	2,1,2
+	stfs	2,52(7)
+	lfs	2,32(6)
+	fmuls	2,1,2
+	stfs	2,8(7)
+	lfs	2,36(6)
+	fmuls	2,1,2
+	stfs	2,24(7)
+	lfs	2,40(6)
+	fmuls	2,1,2
+	stfs	2,40(7)
+	lfs	2,44(6)
+	fmuls	2,1,2
+	stfs	2,56(7)
+	lfs	2,48(6)
+	fmuls	2,1,2
+	stfs	2,12(7)
+	lfs	2,52(6)
+	fmuls	2,1,2
+	stfs	2,28(7)
+	lfs	2,56(6)
+	fmuls	2,1,2
+	stfs	2,44(7)
+	lfs	2,60(6)
+	fmuls	2,1,2
+	stfs	2,60(7)
+	addic	10,10,4
+	addic	6,6,64
+	addc	7,7,3
+	bc	16,0,L..10
+L..11:
+	subfc	3,10,4
+	mtctr	3
+	cmp	0,0x0,10,4
+	bc	4,0,L..13
+L..12:
+	lfs	2,0(6)
+	fmuls	2,1,2
+	stfs	2,0(7)
+	lfs	2,4(6)
+	fmuls	2,1,2
+	stfs	2,16(7)
+	lfs	2,8(6)
+	fmuls	2,1,2
+	stfs	2,32(7)
+	lfs	2,12(6)
+	fmuls	2,1,2
+	stfs	2,48(7)
+	addic	6,6,16
+	addic	7,7,4
+	bc	16,0,L..12
+L..13:
+	bc	4,6,L..19
+	addi	3,0,4
+	subfc	5,5,3
+	addc	4,5,4
+	srawi	5,4,2
+	addze	5,5
+	slwi	5,5,2
+	subfc	4,5,4
+	subfc	3,4,3
+	srawi	4,3,2
+	addze	4,4
+	slwi	4,4,2
+	subfc	3,4,3
+	lfs	2,4(6)
+	fmuls	2,1,2
+	cmpi	1,0x0,3,2
+	cmpi	0,0x0,3,1
+	bc	4,2,L..16
+	stfs	2,16(7)
+	lfs	2,8(6)
+	fmuls	2,1,2
+	stfs	2,32(7)
+	lfs	2,12(6)
+	fmuls	2,1,2
+	stfs	2,48(7)
+	lfs	2,24(6)
+	fmuls	2,1,2
+	addic	3,7,20
+	slwi	4,8,4
+	stfsx	2,3,4
+	lfs	2,28(6)
+	fmuls	2,1,2
+	addic	3,7,36
+	stfsx	2,3,4
+	lfs	2,44(6)
+	fmuls	1,1,2
+	addic	3,7,40
+	stfsx	1,3,4
+	b	L..19
+L..16:
+	bc	4,6,L..18
+	stfs	2,16(7)
+	lfs	2,8(6)
+	fmuls	2,1,2
+	stfs	2,32(7)
+	lfs	2,12(6)
+	fmuls	2,1,2
+	stfs	2,48(7)
+	lfs	2,24(6)
+	fmuls	2,1,2
+	stfs	2,36(7)
+	lfs	2,28(6)
+	fmuls	2,1,2
+	stfs	2,52(7)
+	lfs	2,44(6)
+	fmuls	1,1,2
+	addic	3,7,40
+	slwi	4,8,4
+	stfsx	1,3,4
+	b	L..19
+L..18:
+	stfs	2,16(7)
+	lfs	2,8(6)
+	fmuls	2,1,2
+	stfs	2,32(7)
+	lfs	2,12(6)
+	fmuls	2,1,2
+	stfs	2,48(7)
+	lfs	2,24(6)
+	fmuls	2,1,2
+	stfs	2,36(7)
+	lfs	2,28(6)
+	fmuls	2,1,2
+	stfs	2,52(7)
+	lfs	2,44(6)
+	fmuls	1,1,2
+	stfs	1,56(7)
+L..19:
+CLRET.kernel_sgetr_4_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgetr_3_lib4,N,N
+	.globl	kernel_sgetr_3_lib4
+kernel_sgetr_3_lib4:
+	cmpi	1,0x0,3,1
+	cmpi	6,0x0,5,0
+	bc	4,6,L..23
+	addic	4,4,1
+L..23:
+	addi	10,0,0
+	cmp	0,0x0,4,5
+	bc	12,0,L..31
+	subic	9,4,3
+	bc	4,25,L..28
+	subfc	3,10,5
+	mtctr	3
+	bc	4,25,L..27
+L..26:
+	lfs	2,0(6)
+	fmuls	2,1,2
+	stfs	2,0(7)
+	lfs	2,4(6)
+	fmuls	2,1,2
+	stfs	2,16(7)
+	lfs	2,8(6)
+	fmuls	2,1,2
+	stfs	2,32(7)
+	addic	10,10,1
+	addic	6,6,16
+	addic	7,7,4
+	bc	16,0,L..26
+L..27:
+	slwi	3,8,4
+	subic	3,3,16
+	addc	7,7,3
+L..28:
+	cmp	0,0x0,10,9
+	bc	4,0,L..31
+	slwi	3,8,2
+	slwi	3,3,2
+	subfc	9,10,9
+	addic	9,9,3
+	srawi	9,9,2
+	mtctr	9
+L..30:
+	lfs	2,0(6)
+	fmuls	2,1,2
+	stfs	2,0(7)
+	lfs	2,4(6)
+	fmuls	2,1,2
+	stfs	2,16(7)
+	lfs	2,8(6)
+	fmuls	2,1,2
+	stfs	2,32(7)
+	lfs	2,16(6)
+	fmuls	2,1,2
+	stfs	2,4(7)
+	lfs	2,20(6)
+	fmuls	2,1,2
+	stfs	2,20(7)
+	lfs	2,24(6)
+	fmuls	2,1,2
+	stfs	2,36(7)
+	lfs	2,32(6)
+	fmuls	2,1,2
+	stfs	2,8(7)
+	lfs	2,36(6)
+	fmuls	2,1,2
+	stfs	2,24(7)
+	lfs	2,40(6)
+	fmuls	2,1,2
+	stfs	2,40(7)
+	lfs	2,48(6)
+	fmuls	2,1,2
+	stfs	2,12(7)
+	lfs	2,52(6)
+	fmuls	2,1,2
+	stfs	2,28(7)
+	lfs	2,56(6)
+	fmuls	2,1,2
+	stfs	2,44(7)
+	addic	10,10,4
+	addic	6,6,64
+	addc	7,7,3
+	bc	16,0,L..30
+L..31:
+	subfc	3,10,4
+	mtctr	3
+	cmp	0,0x0,10,4
+	bc	4,0,L..33
+L..32:
+	lfs	2,0(6)
+	fmuls	2,1,2
+	stfs	2,0(7)
+	lfs	2,4(6)
+	fmuls	2,1,2
+	stfs	2,16(7)
+	lfs	2,8(6)
+	fmuls	2,1,2
+	stfs	2,32(7)
+	addic	6,6,16
+	addic	7,7,4
+	bc	16,0,L..32
+L..33:
+	bc	4,6,L..37
+	addi	3,0,4
+	subfc	5,5,3
+	addc	4,5,4
+	srawi	5,4,2
+	addze	5,5
+	slwi	5,5,2
+	subfc	4,5,4
+	subfc	3,4,3
+	srawi	4,3,2
+	addze	4,4
+	slwi	4,4,2
+	subfc	3,4,3
+	lfs	2,4(6)
+	fmuls	2,1,2
+	cmpi	0,0x0,3,1
+	bc	4,2,L..36
+	stfs	2,16(7)
+	lfs	2,8(6)
+	fmuls	2,1,2
+	stfs	2,32(7)
+	lfs	2,24(6)
+	fmuls	1,1,2
+	addic	3,7,20
+	slwi	4,8,4
+	stfsx	1,3,4
+	b	L..37
+L..36:
+	stfs	2,16(7)
+	lfs	2,8(6)
+	fmuls	2,1,2
+	stfs	2,32(7)
+	lfs	2,24(6)
+	fmuls	1,1,2
+	stfs	1,36(7)
+L..37:
+CLRET.kernel_sgetr_3_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgetr_2_lib4,N,N
+	.globl	kernel_sgetr_2_lib4
+kernel_sgetr_2_lib4:
+	cmpi	1,0x0,3,1
+	cmpi	6,0x0,5,0
+	bc	4,6,L..41
+	addic	4,4,1
+L..41:
+	addi	9,0,0
+	cmp	0,0x0,4,5
+	bc	12,0,L..49
+	subic	3,4,3
+	bc	4,25,L..46
+	subfc	5,9,5
+	mtctr	5
+	bc	4,25,L..45
+L..44:
+	lfs	2,0(6)
+	fmuls	2,1,2
+	stfs	2,0(7)
+	lfs	2,4(6)
+	fmuls	2,1,2
+	stfs	2,16(7)
+	addic	9,9,1
+	addic	6,6,16
+	addic	7,7,4
+	bc	16,0,L..44
+L..45:
+	slwi	5,8,4
+	subic	5,5,16
+	addc	7,7,5
+L..46:
+	cmp	0,0x0,9,3
+	bc	4,0,L..49
+	slwi	5,8,2
+	slwi	5,5,2
+	subfc	3,9,3
+	addic	3,3,3
+	srawi	3,3,2
+	mtctr	3
+L..48:
+	lfs	2,0(6)
+	fmuls	2,1,2
+	stfs	2,0(7)
+	lfs	2,4(6)
+	fmuls	2,1,2
+	stfs	2,16(7)
+	lfs	2,16(6)
+	fmuls	2,1,2
+	stfs	2,4(7)
+	lfs	2,20(6)
+	fmuls	2,1,2
+	stfs	2,20(7)
+	lfs	2,32(6)
+	fmuls	2,1,2
+	stfs	2,8(7)
+	lfs	2,36(6)
+	fmuls	2,1,2
+	stfs	2,24(7)
+	lfs	2,48(6)
+	fmuls	2,1,2
+	stfs	2,12(7)
+	lfs	2,52(6)
+	fmuls	2,1,2
+	stfs	2,28(7)
+	addic	9,9,4
+	addic	6,6,64
+	addc	7,7,5
+	bc	16,0,L..48
+L..49:
+	subfc	3,9,4
+	mtctr	3
+	cmp	0,0x0,9,4
+	bc	4,0,L..51
+L..50:
+	lfs	2,0(6)
+	fmuls	2,1,2
+	stfs	2,0(7)
+	lfs	2,4(6)
+	fmuls	2,1,2
+	stfs	2,16(7)
+	addic	6,6,16
+	addic	7,7,4
+	bc	16,0,L..50
+L..51:
+	bc	4,6,L..53
+	lfs	2,4(6)
+	fmuls	1,1,2
+	stfs	1,16(7)
+L..53:
+CLRET.kernel_sgetr_2_lib4:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start kernel_sgetr_1_lib4,N,N
+	.globl	kernel_sgetr_1_lib4
+kernel_sgetr_1_lib4:
+	cmpi	1,0x0,5,0
+	cmpi	0,0x0,3,1
+	bc	4,2,L..57
+	addic	4,4,1
+L..57:
+	addi	9,0,0
+	cmp	0,0x0,4,5
+	bc	12,0,L..65
+	subic	3,4,3
+	bc	4,5,L..62
+	subfc	5,9,5
+	mtctr	5
+	bc	4,5,L..61
+L..60:
+	lfs	2,0(6)
+	fmuls	2,1,2
+	stfs	2,0(7)
+	addic	9,9,1
+	addic	6,6,16
+	addic	7,7,4
+	bc	16,0,L..60
+L..61:
+	slwi	5,8,4
+	subic	5,5,16
+	addc	7,7,5
+L..62:
+	cmp	0,0x0,9,3
+	bc	4,0,L..65
+	slwi	5,8,2
+	slwi	5,5,2
+	subfc	3,9,3
+	addic	3,3,3
+	srawi	3,3,2
+	mtctr	3
+L..64:
+	lfs	2,0(6)
+	fmuls	2,1,2
+	stfs	2,0(7)
+	lfs	2,16(6)
+	fmuls	2,1,2
+	stfs	2,4(7)
+	lfs	2,32(6)
+	fmuls	2,1,2
+	stfs	2,8(7)
+	lfs	2,48(6)
+	fmuls	2,1,2
+	stfs	2,12(7)
+	addic	9,9,4
+	addic	6,6,64
+	addc	7,7,5
+	bc	16,0,L..64
+L..65:
+	subfc	3,9,4
+	mtctr	3
+	cmp	0,0x0,9,4
+	bc	4,0,L..67
+L..66:
+	lfs	2,0(6)
+	fmuls	2,1,2
+	stfs	2,0(7)
+	addic	6,6,16
+	addic	7,7,4
+	bc	16,0,L..66
+L..67:
+CLRET.kernel_sgetr_1_lib4:
+	bclr	20,0
+	.merge_end
+	.extern	__fltused
+	.sect	.data
+	.align	8
+CLDATA.:
+	.sect	.data
+	.align	8
+CLRDATA.:
+	.sect	.rodata1
+	.align	8
+STRINGDATA.:
+	.sect	.rodata
+	.align	8
+CONSTDATA.:
+	.sect	.libinfo
+	.byte	"behp#603e#"

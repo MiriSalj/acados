@@ -1,0 +1,148 @@
+#	 Microtec C/C++ PowerPC Compiler
+	#	"Mentor Graphics ANSI_C Front End 3.8.5   ; Back End 3.8.6   "
+	.file	"s_aux_common.c"
+#	Options: -x -xG -ze -f -p603e -DDS_PLATFORM_PPC -DWINDOWS_SKIP_PTR_ALIGNMENT_CHECK -D_DS1401 -D__DSPACE__ -JC:\acados_ds1401\acados\external\blasfeo\include -JC:\dSPACE RCPHIL 2017-B\DS1401\RTLib -DLA_HIGH_PERFORMANCE -DMF_PANELMAJ -DK_MAX_STACK=300 -DOS_WINDOWS -DEXTERNAL_BLAS_NONE -DTARGET_GENERIC -JC:\acados_ds1401\acados\external\blasfeo\include C:\acados_ds1401\acados\external\blasfeo\auxiliary\s_aux_common.c
+#	Source File: C:\acados_ds1401\acados\external\blasfeo\auxiliary\s_aux_common.c
+	.cputype	"603e/F"
+	.aloff
+	.endian	big
+	.lflags	nr
+	.equ	._PPC_EMB_initflag,1
+	.sect	.text
+	.align	4
+	.merge_start blasfeo_pm_memsize_smat,N,N
+	.globl	blasfeo_pm_memsize_smat
+blasfeo_pm_memsize_smat:
+	slwi	8,3,2
+	addc	7,4,3
+	subic	7,7,1
+	divw	7,7,3
+	mullw	7,7,3
+	addic	6,5,4
+	subic	6,6,1
+	srawi	3,6,2
+	addze	6,3
+	slwi	6,6,2
+	cmp	0,0x0,4,5
+	bc	4,0,L..3
+	addc	3,8,4
+	b	CL.t.1
+L..3:
+	addc	3,8,5
+CL.t.1:
+	subic	3,3,1
+	divw	3,3,8
+	mullw	3,3,8
+L..4:
+	mullw	4,6,7
+	addc	3,4,3
+	slwi	3,3,2
+CLRET.blasfeo_pm_memsize_smat:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start blasfeo_pm_create_smat,N,N
+	.globl	blasfeo_pm_create_smat
+blasfeo_pm_create_smat:
+	stw	7,0(6)
+	stw	3,32(6)
+	slwi	10,3,2
+	stw	4,12(6)
+	stw	5,16(6)
+	addc	8,4,3
+	subic	8,8,1
+	divw	8,8,3
+	mullw	3,8,3
+	ori	12,3,0
+	addic	8,5,4
+	subic	8,8,1
+	srawi	9,8,2
+	addze	8,9
+	slwi	8,8,2
+	ori	11,8,0
+	stw	12,20(6)
+	stw	11,24(6)
+	ori	9,7,0
+	stw	9,4(6)
+	mullw	8,8,3
+	slwi	3,8,2
+	addc	9,9,3
+	cmp	0,0x0,4,5
+	bc	4,0,L..8
+	addc	3,10,4
+	b	CL.t.2
+L..8:
+	addc	3,10,5
+CL.t.2:
+	subic	3,3,1
+	divw	3,3,10
+	mullw	3,3,10
+L..9:
+	stw	9,8(6)
+	addc	3,8,3
+	slwi	3,3,2
+	stw	3,36(6)
+	addi	3,0,0
+	stw	3,28(6)
+CLRET.blasfeo_pm_create_smat:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start blasfeo_cm_memsize_smat,N,N
+	.globl	blasfeo_cm_memsize_smat
+blasfeo_cm_memsize_smat:
+	ori	5,4,0
+	cmp	0,0x0,3,4
+	bc	4,0,L..13
+	ori	5,3,0
+L..13:
+	mullw	3,3,4
+	addc	3,3,5
+	slwi	3,3,2
+CLRET.blasfeo_cm_memsize_smat:
+	bclr	20,0
+	.merge_end
+	.sect	.text
+	.align	4
+	.merge_start blasfeo_cm_create_smat,N,N
+	.globl	blasfeo_cm_create_smat
+blasfeo_cm_create_smat:
+	stw	6,0(5)
+	stw	3,12(5)
+	stw	4,16(5)
+	addi	10,0,0
+	stw	10,28(5)
+	ori	9,6,0
+	stw	9,4(5)
+	mullw	8,3,4
+	slwi	6,8,2
+	addc	9,9,6
+	ori	7,4,0
+	cmp	0,0x0,3,4
+	bc	4,0,L..17
+	ori	7,3,0
+L..17:
+	stw	9,8(5)
+	stw	10,28(5)
+	addc	3,8,7
+	slwi	3,3,2
+	stw	3,36(5)
+CLRET.blasfeo_cm_create_smat:
+	bclr	20,0
+	.merge_end
+	.sect	.data
+	.align	8
+CLDATA.:
+	.sect	.data
+	.align	8
+CLRDATA.:
+	.sect	.rodata1
+	.align	8
+STRINGDATA.:
+	.sect	.rodata
+	.align	8
+CONSTDATA.:
+	.sect	.libinfo
+	.byte	"behp#603e#"
