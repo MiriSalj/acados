@@ -1,4 +1,4 @@
-#
+﻿#
 # Copyright 2019 Gianluca Frison, Dimitris Kouzoupis, Robin Verschueren,
 # Andrea Zanelli, Niels van Duijkeren, Jonathan Frey, Tommaso Sartor,
 # Branimir Novoselnik, Rien Quirynen, Rezart Qelibari, Dang Doan,
